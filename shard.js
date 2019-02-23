@@ -32,13 +32,13 @@ client.on("message", message => {
     if (message.content === `${prefix}help`) {
   const embed = new Discord.RichEmbed()
       .setColor("#111111")
-      .setDescription(`
+      .setDescription(`**
       🌍__All Commands__🌍
         /bc ➼ لارسال برودكاست
         /bot ➼ معلومات عن البوت
         /bc ➼ لارسال رسالة برودكاست
         /inv ➼ لدعوة البوت
- `)
+ **`)
    message.author.sendEmbed(embed)
 
    }
