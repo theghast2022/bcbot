@@ -12,9 +12,41 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Code By : ZorexHost `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$help | $inv `)
-client.user.setStatus("dnd")
+client.user.setGame(`/bc | /inv `)
+client.user.setStatus("online")
 }); 
+
+
+client.on('message', message => {
+  if (true) {
+if (message.content === '/inv') {
+      message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=510497338620510208&permissions=8&scope=bot').catch(e => console.log(e.stack));
+
+    }
+   } 
+  });
+
+client.on("guildCreate", guild => {
+  //client.channels.get("535970680903041044").send(' ***  BOT  ***   **Join To**   ***[ ' + `${guild.name}` + ' ]***   ,   **  Owner  **  ' + ' ***[ ' + '<@' + `${guild.owner.user.id}` + '>' + ' ]***  **|**  ***[ ' + '<' + `${guild.owner.user.username}` + '>' + ' ]***')
+  let sEmbed = new Discord.RichEmbed().setDescription(`***  BOT  ***   **Join To**   ***[ ${guild.name} ] ***\n   
+**  Owner  [<@${guild.ownerID}>] || 
+  Owner ID [${guild.ownerID}] || 
+  Owner No Mention [${guild.owner.user.username}]**`).setThumbnail(guild.iconURL)
+  client.channels.get("535970680903041044").send({
+    embed : sEmbed
+  });
+});
+
+client.on("guildDelete", guild => {
+  //client.channels.get("531359646485839892").send(' ***  BOT  ***   **Leave From**   ***[ ' + `${guild.name}` + ' ]***   ,   **  Owner  **  ' + ' ***[ ' + '<@' + `${guild.owner.user.id}` + '>' + ' ]***  **|**  ***[ ' + '<' + `${guild.owner.user.username}` + '>' + ' ]***')
+  let sEmbed = new Discord.RichEmbed().setDescription (` ***  BOT  ***   **Leave From**   ***[ ' + ${guild.name} + ' ]***\n
+**  Owner [<@${guild.ownerID}>] ||
+  Owner ID [${guild.ownerID}] ||
+  Owner No Mention [${guild.owner.user.username}]**`).setThumbnail(guild.iconURL)
+  client.channels.get("531359646485839892").send({
+	embed : sEmbed
+  });
+});
 
 client.on('message', message => {
 if(message.author.bot) return;
