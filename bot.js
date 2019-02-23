@@ -7,10 +7,15 @@ const cool = [];
 const fs = require ('fs');
 
 client.on('ready', () => {
-        console.log(`/bc | XBroadCast Bot `);
-              client.user.setActivity("Narox Devs", {type: 'WATCHING'});
-      
-      });
+   console.log(`----------------`);
+      console.log(`Desert Bot- Code By : ZorexHost`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     Code By : ZorexHost `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(`$help | $inv `)
+client.user.setStatus("dnd")
+}); 
 
 client.on('message', message => {
 if(message.author.bot) return;
