@@ -1,10 +1,17 @@
 const Discord = require('discord.js');
 const moment = require("moment");  
 const client = new Discord.Client(); 
-const prefix = "!"
+const prefix = "/"
 const ms = require('ms'); // npm i ms
 const cool = [];
 const fs = require ('fs');
+
+client.on('ready', () => {
+        console.log(`/bc | XBroadCast Bot `);
+              client.user.setActivity("Narox Devs", {type: 'WATCHING'});
+      
+      });
+
 client.on('message', message => {
 if(message.author.bot) return;
 if(message.channel.type === 'dm') return;
