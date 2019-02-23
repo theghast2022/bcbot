@@ -26,6 +26,24 @@ if (message.content === '/inv') {
    } 
   });
 
+
+
+client.on("message", message => {
+    if (message.content === `${prefix}help`) {
+  const embed = new Discord.RichEmbed()
+      .setColor("#111111")
+      .setDescription(`
+      🌍__All Commands__🌍
+        /bc ➼ لارسال برودكاست
+        /bot ➼ معلومات عن البوت
+        /bc ➼ لارسال رسالة برودكاست
+        /inv ➼ لدعوة البوت
+ `)
+   message.author.sendEmbed(embed)
+
+   }
+   });
+
 client.on("guildCreate", guild => {
   //client.channels.get("535970680903041044").send(' ***  BOT  ***   **Join To**   ***[ ' + `${guild.name}` + ' ]***   ,   **  Owner  **  ' + ' ***[ ' + '<@' + `${guild.owner.user.id}` + '>' + ' ]***  **|**  ***[ ' + '<' + `${guild.owner.user.username}` + '>' + ' ]***')
   let sEmbed = new Discord.RichEmbed().setDescription(`***  BOT  ***   **Join To**   ***[ ${guild.name} ] ***\n   
